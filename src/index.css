@@ -1,0 +1,21 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+:root {
+  --color-red: #8B2D3D;
+  --color-black: #000004;
+  --color-blue: #094D71;
+  --color-white: #FBFEF9;
+  --color-yellow: #EFBB43;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}

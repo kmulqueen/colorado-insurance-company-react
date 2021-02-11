@@ -1,0 +1,13 @@
+.site-nav-header {
+    background: var(--color-blue);
+}
+
+.nav {
+	display: grid;
+	grid: 1fr / 1fr max-content;
+    align-items: center;
+    padding: 2em;
+}
+
+
+

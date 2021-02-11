@@ -1,0 +1,20 @@
+.logo-btn {
+    height: max-content;
+    width: max-content;
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0.5em;
+}
+
+.logo-btn:focus {
+  outline: 1px solid var(--color-white);
+}
+
+.site-logo {
+    width: 4rem;
+    height: 4rem;
+    fill: var(--color-yellow);
+    background: var(--color-blue);
+}

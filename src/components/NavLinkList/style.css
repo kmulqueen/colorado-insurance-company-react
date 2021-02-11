@@ -1,0 +1,27 @@
+.nav__list {
+    display: none;
+}
+
+@media only screen and (min-width: 600px) {
+    .nav__list {
+        list-style: none;
+        display: grid;
+        grid: 1fr / repeat(3, max-content);
+        column-gap: 1em;
+        margin-top: 1em;
+    }
+    
+    .nav__item {
+        font-size: 1.5rem;
+    }
+    
+    .nav__link {
+        text-decoration: none;
+        color: var(--color-white);
+    }
+    
+    .nav__link:focus,
+    .nav__link:hover {
+        color: var(--color-yellow)
+    }
+}
