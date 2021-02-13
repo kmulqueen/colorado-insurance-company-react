@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/colorado-insurance-company-react/static/css/main.2722729a.chunk.css",
-    "main.js": "/colorado-insurance-company-react/static/js/main.30992068.chunk.js",
-    "main.js.map": "/colorado-insurance-company-react/static/js/main.30992068.chunk.js.map",
+    "main.js": "/colorado-insurance-company-react/static/js/main.8cb53f8e.chunk.js",
+    "main.js.map": "/colorado-insurance-company-react/static/js/main.8cb53f8e.chunk.js.map",
     "runtime-main.js": "/colorado-insurance-company-react/static/js/runtime-main.943ec816.js",
     "runtime-main.js.map": "/colorado-insurance-company-react/static/js/runtime-main.943ec816.js.map",
     "static/css/2.150d169a.chunk.css": "/colorado-insurance-company-react/static/css/2.150d169a.chunk.css",
@@ -24,6 +24,6 @@
     "static/css/2.150d169a.chunk.css",
     "static/js/2.39ebe951.chunk.js",
     "static/css/main.2722729a.chunk.css",
-    "static/js/main.30992068.chunk.js"
+    "static/js/main.8cb53f8e.chunk.js"
   ]
 }
