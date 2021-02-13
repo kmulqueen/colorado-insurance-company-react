@@ -2,7 +2,7 @@
     background: var(--color-blue);
 }
 
-.nav {
+.nav-bar {
 	display: grid;
 	grid: 1fr / 1fr max-content;
     align-items: center;

@@ -16,7 +16,7 @@ const NavBar = () => {
   return (
     <>
       <header className="site-nav-header">
-        <nav className="nav">
+        <nav className="nav-bar">
           <SiteLogo />
           <HamburgerMenu onClick={handleHamburgerClick} />
           <NavLinkList />
