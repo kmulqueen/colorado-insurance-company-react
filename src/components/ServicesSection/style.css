@@ -5,6 +5,11 @@
     row-gap: 4em;
 }
 
+.ins-srv__heading {
+	font-size: 3rem;
+	font-weight: 500;
+}
+
 .ins-srv__item {
     display: grid;
     place-items: center;
