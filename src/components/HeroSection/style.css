@@ -1,0 +1,28 @@
+.hero {
+    height: 80vh;
+    background-image: 
+        linear-gradient(to right bottom, rgba(210, 253, 255, 0.4), var(--color-blue)), 
+        url(../../img/nat-10.jpg);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+.hero__content {
+    display: grid;
+    grid: max-content 1fr / 1fr;
+    row-gap: 2em;
+    padding: 0 2em;
+    margin-top: 7em;
+}
+
+.hero__heading {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.hero__text {
+    font-size: 1.6rem;
+    color: var(--color-white);
+}

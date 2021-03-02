@@ -5,7 +5,7 @@ import "./style.css";
 
 const SiteLogo = () => {
   return (
-    <Link to="/" className="logo-btn">
+    <Link to="/" className="logo-btn" role="button" tabIndex="0">
       <svg className="site-logo">
         <use href={`${sprite}#icon-key`} />
       </svg>

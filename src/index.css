@@ -1,4 +1,6 @@
-*{
+*,
+*::before,
+*::after{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,6 +16,8 @@ html {
   --color-blue: #094D71;
   --color-white: #FBFEF9;
   --color-yellow: #EFBB43;
+  --color-white-rgb: 251, 254, 249;
+  --color-black-rgb: 0, 0, 4;
 }
 
 body {

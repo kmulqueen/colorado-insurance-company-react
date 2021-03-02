@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
       <Switch>
         <Route exact path="/home-insurance" component={HomeInsurancePage} />
         <Route exact path="/life-insurance" component={LifeInsurancePage} />

@@ -1,0 +1,29 @@
+.form-heading {
+    text-align: center;
+    padding: 1em;
+}
+
+.insurance-form {
+    height: 70vh;
+    padding: 2em;
+    display: grid;
+    grid: auto-flow max-content / max-content 1fr;
+    gap: 2em;
+}
+
+.insurance-form > label {
+    font-size: 1.6rem;
+}
+
+.insurance-form > input {
+    padding: 0 0.5em;
+}
+
+.insurance-form__submit {
+    grid-column: span 2;
+    padding: 1em;
+}
+
+.insurance-form__page-button {
+    padding: 1em;
+}

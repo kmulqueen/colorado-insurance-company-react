@@ -1,51 +1,46 @@
 import React from "react";
+import ServicesCard from "../ServicesCard";
 import sprite from "../../icons/sprite.svg";
 import { Link } from "react-router-dom";
 import "./style.css";
 
 const ServicesSection = () => {
+  const services = [
+    {
+      icon: `${sprite}#icon-heart2`,
+      heading: "Life",
+      text: "Life insurance info stuff blah blah",
+      buttonText: "Get life insurance",
+      path: "/life-insurance",
+    },
+    {
+      icon: `${sprite}#icon-home4`,
+      heading: "Home",
+      text: "Home insurance info stuff blah blah",
+      buttonText: "Get home insurance",
+      path: "/home-insurance",
+    },
+    {
+      icon: `${sprite}#icon-car`,
+      heading: "Auto",
+      text: "Auto insurance info stuff blah blah",
+      buttonText: "Get auto insurance",
+      path: "/auto-insurance",
+    },
+  ];
   return (
     <section className="ins-srv">
       <h2 className="ins-srv__heading">Insurance Services</h2>
-      <article className="ins-srv__item">
-        <svg className="ins-srv__icon">
-          <use href={`${sprite}#icon-home1`} />
-        </svg>
-        <h3 className="ins-srv__title">Home</h3>
-        <p className="ins-srv__text">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit,
-          vero!
-        </p>
-        <Link to="/home-insurance" className="ins-srv__btn">
-          Get home insurance
-        </Link>
-      </article>
-      <article className="ins-srv__item">
-        <svg className="ins-srv__icon">
-          <use href={`${sprite}#icon-key`} />
-        </svg>
-        <h3 className="ins-srv__title">Auto</h3>
-        <p className="ins-srv__text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis,
-          pariatur.
-        </p>
-        <Link to="/auto-insurance" className="ins-srv__btn">
-          Get auto insurance
-        </Link>
-      </article>
-      <article className="ins-srv__item">
-        <svg className="ins-srv__icon">
-          <use href={`${sprite}#icon-health`} />
-        </svg>
-        <h3 className="ins-srv__title">Life</h3>
-        <p className="ins-srv__text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-          consequatur?
-        </p>
-        <Link to="/life-insurance" className="ins-srv__btn">
-          Get life insurance
-        </Link>
-      </article>
+      {services.map((service) => (
+        <ServicesCard
+          key={service.heading}
+          icon={service.icon}
+          heading={service.heading}
+          text={service.text}
+          buttonText={service.buttonText}
+          path={service.path}
+        />
+      ))}
     </section>
   );
 };
