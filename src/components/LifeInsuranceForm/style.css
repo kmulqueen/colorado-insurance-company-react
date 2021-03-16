@@ -4,18 +4,17 @@
 }
 
 .insurance-form {
-    height: 70vh;
     padding: 2em;
     display: grid;
     grid: auto-flow max-content / max-content 1fr;
     gap: 2em;
 }
 
-.insurance-form > label {
+.insurance-form>label {
     font-size: 1.6rem;
 }
 
-.insurance-form > input {
+.insurance-form>input {
     padding: 0 0.5em;
 }
 
@@ -26,4 +25,16 @@
 
 .insurance-form__page-button {
     padding: 1em;
+}
+
+.insurance-form__home-button {
+    background: var(--color-blue);
+    padding: 0.5em;
+    font-size: 2rem;
+    color: var(--color-white);
+    text-transform: capitalize;
+    border-radius: 1rem;
+    margin: 3em 1em;
+    display: grid;
+    place-items: center;
 }

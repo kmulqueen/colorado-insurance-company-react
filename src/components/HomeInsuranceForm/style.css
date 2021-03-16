@@ -1,0 +1,59 @@
+.form-heading {
+    text-align: center;
+    padding: 1em;
+}
+
+.insurance-form {
+    padding: 2em;
+    display: grid;
+    grid: auto-flow max-content / max-content 1fr;
+    gap: 2em;
+}
+
+.insurance-form>label {
+    font-size: 1.6rem;
+}
+
+.insurance-form>input {
+    padding: 0 0.5em;
+}
+
+.insurance-form__submit {
+    grid-column: span 2;
+    padding: 1em;
+}
+
+.insurance-form__page-button {
+    padding: 1em;
+}
+
+.insurance-form__home-button {
+    background: var(--color-blue);
+    padding: 0.5em;
+    font-size: 2rem;
+    color: var(--color-white);
+    text-transform: capitalize;
+    border-radius: 1rem;
+    margin: 3em 1em;
+    display: grid;
+    place-items: center;
+}
+
+.insurance-form__fieldset {
+    grid-column: span 2;
+}
+
+.insurance-form__legend {
+    font-size: 1.6rem;
+}
+
+.insurance-form__legend-option {
+    display: grid;
+    grid: auto-flow max-content / 5rem max-content;
+    gap: 1em;
+    margin-left: 3em;
+}
+
+.fieldset__label {
+    font-size: 1.6rem;
+}

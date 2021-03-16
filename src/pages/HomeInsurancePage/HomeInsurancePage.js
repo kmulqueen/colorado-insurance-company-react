@@ -1,7 +1,8 @@
 import React from "react";
+import HomeInsuranceForm from "../../components/HomeInsuranceForm";
 
 const HomeInsurancePage = () => {
-  return <div>Home Insurance Page</div>;
+  return <HomeInsuranceForm />;
 };
 
 export default HomeInsurancePage;

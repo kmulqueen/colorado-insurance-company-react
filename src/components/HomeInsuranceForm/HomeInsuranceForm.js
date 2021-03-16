@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import emailjs from "emailjs-com";
 import "./style.css";
 
-const InsuranceForm = () => {
+const HomeInsuranceForm = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -12,61 +11,19 @@ const InsuranceForm = () => {
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [zip, setZip] = useState("");
+  const [homeChecked, setHomeChecked] = useState(true);
+  const [autoChecked, setAutoChecked] = useState(false);
   const [page, setPage] = useState(1);
 
-  function sendEmail(e) {
-    e.preventDefault();
-
-    const templateParams = {
-      firstName,
-      lastName,
-      email,
-      phone,
-      gender,
-      address,
-      city,
-      state,
-      zip,
-      productType: "Life Insurance",
-    };
-    emailjs
-      .send(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
-        templateParams,
-        process.env.REACT_APP_USER_ID
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  }
-
-  const handleSubmit = (e) => {
-    if (page !== 2) {
-      return;
-    }
-    e.preventDefault();
-    sendEmail(e);
-  };
-
   const handleNextPage = () => {
-    const nextPage = page + 1;
-    setPage(nextPage);
+    console.log("home", homeChecked);
+    console.log("auto", autoChecked);
   };
 
-  const handlePrevPage = () => {
-    const prevPage = page - 1;
-    setPage(prevPage);
-  };
   return (
     <>
-      <h1 className="form-heading">Life Insurance Form</h1>
-      <form onSubmit={handleSubmit} className="insurance-form">
+      <h1 className="form-heading">Home Insurance Form</h1>
+      <form className="insurance-form">
         {page === 1 && (
           <>
             <label htmlFor="firstName">First Name</label>
@@ -101,17 +58,17 @@ const InsuranceForm = () => {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
-          </>
-        )}
-        {page === 2 && (
-          <>
-            <label htmlFor="gender">Select Gender</label>
-            <select name="gender" onChange={(e) => setGender(e.target.value)}>
-              <option value="---">---</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="Other">Other</option>
-            </select>
+            {/* <label htmlFor="gender">Select Gender</label>
+          <select
+            name="gender"
+            onChange={(e) => setGender(e.target.value)}
+            value={gender}
+          >
+            <option value="---">---</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select> */}
             <label htmlFor="address">Address</label>
             <input
               type="text"
@@ -144,31 +101,45 @@ const InsuranceForm = () => {
               value={zip}
               onChange={(e) => setZip(e.target.value)}
             />
-            <button type="submit" className="insurance-form__submit">
-              Submit
-            </button>
+            <fieldset className="insurance-form__fieldset">
+              <legend className="insurance-form__legend">
+                What Services Are You Interested In?
+              </legend>
+              <div className="insurance-form__legend-option">
+                <label htmlFor="homeInsurance" className="fieldset__label">
+                  Home
+                </label>
+                <input
+                  type="checkbox"
+                  name="homeInsurance"
+                  checked={homeChecked}
+                  onChange={(e) => setHomeChecked(e.target.checked)}
+                />
+              </div>
+              <div className="insurance-form__legend-option">
+                <label htmlFor="autoInsurance" className="fieldset__label">
+                  Auto
+                </label>
+                <input
+                  type="checkbox"
+                  name="autoInsurance"
+                  checked={autoChecked}
+                  onChange={(e) => setAutoChecked(e.target.checked)}
+                />
+              </div>
+            </fieldset>
           </>
         )}
-        {page === 1 ? (
-          <button
-            type="button"
-            className="insurance-form__page-button"
-            onClick={handleNextPage}
-          >
-            Next
-          </button>
-        ) : (
-          <button
-            type="button"
-            className="insurance-form__page-button"
-            onClick={handlePrevPage}
-          >
-            Go Back
-          </button>
-        )}
       </form>
+      <button
+        className="insurance-form__page-button"
+        type="button"
+        onClick={handleNextPage}
+      >
+        Next
+      </button>
     </>
   );
 };
 
-export default InsuranceForm;
+export default HomeInsuranceForm;
