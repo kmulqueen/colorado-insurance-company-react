@@ -18,6 +18,13 @@ const AutoInsuranceForm = () => {
   const [page, setPage] = useState(1);
   const [drivers, setDrivers] = useState([{}]);
   const [vehicles, setVehicles] = useState([{}]);
+  const [currentlyInsuredOption, setCurrentlyInsuredOption] = useState("");
+  const [bodilyInjury, setBodilyInjury] = useState("");
+  const [propertyDamage, setPropertyDamage] = useState("");
+  const [medicalPayments, setMedicalPayments] = useState("");
+  const [accidentsChecked, setAccidentsChecked] = useState(false);
+  const [violationsChecked, setViolationsChecked] = useState(false);
+  const [claimsChecked, setClaimsChecked] = useState(false);
 
   // Handle Pages
   const handleNextPage = () => {
@@ -76,6 +83,27 @@ const AutoInsuranceForm = () => {
     const vehicleToUpdate = vehiclesCopy[i];
     vehicleToUpdate[e.target.name] = e.target.value;
     setVehicles([...vehiclesCopy]);
+  };
+  const handleCurrentCoverageChange = (e) => {
+    setCurrentlyInsuredOption(e.target.value);
+  };
+  const handleBodilyInjuryChange = (e) => {
+    setBodilyInjury(e.target.value);
+  };
+  const handlePropertyDamageChange = (e) => {
+    setPropertyDamage(e.target.value);
+  };
+  const handleMedicalPaymentsChange = (e) => {
+    setMedicalPayments(e.target.value);
+  };
+  const handleAccidentsChange = (e) => {
+    setAccidentsChecked(!accidentsChecked);
+  };
+  const handleViolationsChange = (e) => {
+    setViolationsChecked(!violationsChecked);
+  };
+  const handleClaimsChange = (e) => {
+    setClaimsChecked(!claimsChecked);
   };
 
   return (
@@ -233,6 +261,123 @@ const AutoInsuranceForm = () => {
               </svg>
               Add New Vehicle
             </button>
+            <h2 className="form-sub-heading">Current Coverage</h2>
+            <fieldset className="insurance-form__fieldset">
+              <legend className="insurance-form__legend">
+                Are You Currently Insured?
+              </legend>
+              <div className="insurance-form__legend-option">
+                <label htmlFor="currentCoverage" className="fieldset__label">
+                  <input
+                    type="radio"
+                    name="currentCoverage"
+                    className="insurance-form__radio-input"
+                    onChange={(e) => handleCurrentCoverageChange(e)}
+                    checked={currentlyInsuredOption === "Yes"}
+                    value="Yes"
+                  />
+                  Yes
+                </label>
+              </div>
+              <div className="insurance-form__legend-option">
+                <label htmlFor="currentCoverage" className="fieldset__label">
+                  <input
+                    type="radio"
+                    name="currentCoverage"
+                    className="insurance-form__radio-input"
+                    onChange={(e) => handleCurrentCoverageChange(e)}
+                    checked={currentlyInsuredOption === "No"}
+                    value="No"
+                  />
+                  No
+                </label>
+              </div>
+            </fieldset>
+            <label htmlFor="bodilyInjury">Bodily Injury</label>
+            <select
+              name="bodilyInjury"
+              onChange={(e) => handleBodilyInjuryChange(e)}
+              value={bodilyInjury}
+            >
+              <option value="---">---</option>
+              <option value="50/100">50/100</option>
+              <option value="100/100">100/100</option>
+              <option value="100/300">100/300</option>
+              <option value="250/500">250/500</option>
+              <option value="300/300">300/300</option>
+              <option value="500/500">500/500</option>
+              <option value="Other">Other</option>
+            </select>
+            <label htmlFor="propertyDamage">Property Damage</label>
+            <select
+              name="propertyDamage"
+              onChange={(e) => handlePropertyDamageChange(e)}
+              value={propertyDamage}
+            >
+              <option value="---">---</option>
+              <option value="State Minimum">State Minimum</option>
+              <option value="15,000">15,000</option>
+              <option value="25,000">25,000</option>
+              <option value="50,000">50,000</option>
+              <option value="100,000">100,000</option>
+              <option value="250,000">250,000</option>
+              <option value="500,000">500,000</option>
+            </select>
+            <label htmlFor="medicalPayments">Medical Payments</label>
+            <select
+              name="medicalPayments"
+              onChange={(e) => handleMedicalPaymentsChange(e)}
+              value={medicalPayments}
+            >
+              <option value="---">---</option>
+              <option value="None">None</option>
+              <option value="500">500</option>
+              <option value="1,000">10,00</option>
+              <option value="2,000">2,000</option>
+              <option value="2,500">2,500</option>
+              <option value="5,000">5,000</option>
+              <option value="10,000">10,000</option>
+              <option value="15,000">15,000</option>
+              <option value="25,000">25,000</option>
+              <option value="50,000">50,000</option>
+              <option value="100,000">100,000</option>
+            </select>
+            <fieldset className="insurance-form__fieldset">
+              <legend className="insurance-form__legend">Incidents</legend>
+              <div className="insurance-form__legend-option">
+                <label htmlFor="accidents" className="fieldset__label">
+                  Accidents
+                </label>
+                <input
+                  type="checkbox"
+                  name="accidents"
+                  checked={accidentsChecked}
+                  onChange={(e) => setAccidentsChecked(e.target.checked)}
+                />
+              </div>
+              <div className="insurance-form__legend-option">
+                <label htmlFor="violations" className="fieldset__label">
+                  Violations
+                </label>
+                <input
+                  type="checkbox"
+                  name="violations"
+                  checked={violationsChecked}
+                  onChange={(e) => setViolationsChecked(e.target.checked)}
+                />
+              </div>
+              <div className="insurance-form__legend-option">
+                <label htmlFor="claims" className="fieldset__label">
+                  Claims
+                </label>
+                <input
+                  type="checkbox"
+                  name="claims"
+                  checked={claimsChecked}
+                  onChange={(e) => setClaimsChecked(e.target.checked)}
+                />
+              </div>
+            </fieldset>
           </>
         )}
       </form>

@@ -54,9 +54,13 @@
 
 .insurance-form__legend-option {
     display: grid;
-    grid: auto-flow max-content / 5rem max-content;
+    grid: auto-flow max-content / 7rem max-content;
     gap: 1em;
     margin-left: 3em;
+}
+
+.insurance-form__radio-input {
+    margin-right: 0.5em;
 }
 
 .add-driver-button,
