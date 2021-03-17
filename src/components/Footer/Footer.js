@@ -26,6 +26,12 @@ const Footer = () => {
           Contact Us
         </Link>
       </div>
+      <h4 className="footer__title">Our Site</h4>
+      <div className="footer__links footer__links--site">
+        <Link to="/" className="footer__link">
+          Homepage
+        </Link>
+      </div>
     </footer>
   );
 };

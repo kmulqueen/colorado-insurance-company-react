@@ -1,7 +1,6 @@
 import React from "react";
 import ServicesCard from "../ServicesCard";
 import sprite from "../../icons/sprite.svg";
-import { Link } from "react-router-dom";
 import "./style.css";
 
 const ServicesSection = () => {

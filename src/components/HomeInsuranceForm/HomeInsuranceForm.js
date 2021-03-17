@@ -6,7 +6,6 @@ const HomeInsuranceForm = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [gender, setGender] = useState("");
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
@@ -16,8 +15,8 @@ const HomeInsuranceForm = () => {
   const [page, setPage] = useState(1);
 
   const handleNextPage = () => {
-    console.log("home", homeChecked);
-    console.log("auto", autoChecked);
+    const nextPage = page + 1;
+    setPage(nextPage);
   };
 
   return (
@@ -58,17 +57,6 @@ const HomeInsuranceForm = () => {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
-            {/* <label htmlFor="gender">Select Gender</label>
-          <select
-            name="gender"
-            onChange={(e) => setGender(e.target.value)}
-            value={gender}
-          >
-            <option value="---">---</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-          </select> */}
             <label htmlFor="address">Address</label>
             <input
               type="text"

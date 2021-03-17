@@ -1,5 +1,4 @@
 import { Switch, Route } from "react-router-dom";
-import NavBar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
 import ServicesPage from "./pages/ServicesPage";
 import AboutPage from "./pages/AboutPage";
@@ -12,7 +11,6 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-      {/* <NavBar /> */}
       <Switch>
         <Route exact path="/home-insurance" component={HomeInsurancePage} />
         <Route exact path="/life-insurance" component={LifeInsurancePage} />

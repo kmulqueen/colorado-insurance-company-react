@@ -8,7 +8,7 @@ const HomePage = () => {
     <>
       <HeroSection />
       <ServicesSection />
-      {/* <ContactBanner /> */}
+      <ContactBanner />
     </>
   );
 };

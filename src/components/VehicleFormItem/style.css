@@ -1,0 +1,12 @@
+.vehicle-form-item__seperator {
+    grid-column: span 2;
+}
+
+.vehicle-form-item__remove-button {
+    grid-column: 2;
+    justify-self: end;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+    fill: var(--color-red);
+}
