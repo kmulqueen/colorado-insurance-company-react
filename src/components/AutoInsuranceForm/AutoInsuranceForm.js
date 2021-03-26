@@ -22,6 +22,7 @@ const AutoInsuranceForm = () => {
   const [bodilyInjury, setBodilyInjury] = useState("");
   const [propertyDamage, setPropertyDamage] = useState("");
   const [medicalPayments, setMedicalPayments] = useState("");
+  const [comprehensiveCollision, setComprehensiveCollision] = useState("");
   const [accidentsChecked, setAccidentsChecked] = useState(false);
   const [violationsChecked, setViolationsChecked] = useState(false);
   const [claimsChecked, setClaimsChecked] = useState(false);
@@ -96,14 +97,8 @@ const AutoInsuranceForm = () => {
   const handleMedicalPaymentsChange = (e) => {
     setMedicalPayments(e.target.value);
   };
-  const handleAccidentsChange = (e) => {
-    setAccidentsChecked(!accidentsChecked);
-  };
-  const handleViolationsChange = (e) => {
-    setViolationsChecked(!violationsChecked);
-  };
-  const handleClaimsChange = (e) => {
-    setClaimsChecked(!claimsChecked);
+  const handleComprehensiveCollisionChange = (e) => {
+    setComprehensiveCollision(e.target.value);
   };
 
   return (
@@ -341,6 +336,37 @@ const AutoInsuranceForm = () => {
               <option value="25,000">25,000</option>
               <option value="50,000">50,000</option>
               <option value="100,000">100,000</option>
+            </select>
+            <label htmlFor="medicalPayments">Medical Payments</label>
+            <select
+              name="medicalPayments"
+              onChange={(e) => handleMedicalPaymentsChange(e)}
+              value={medicalPayments}
+            >
+              <option value="---">---</option>
+              <option value="None">None</option>
+              <option value="500">500</option>
+              <option value="1,000">1,000</option>
+              <option value="2,000">2,000</option>
+              <option value="2,500">2,500</option>
+              <option value="5,000">5,000</option>
+              <option value="10,000">10,000</option>
+              <option value="15,000">15,000</option>
+              <option value="25,000">25,000</option>
+              <option value="50,000">50,000</option>
+              <option value="100,000">100,000</option>
+            </select>
+            <label htmlFor="medicalPayments">Comprehensive/Collision</label>
+            <select
+              name="comprehensiveCollision"
+              onChange={(e) => handleComprehensiveCollisionChange(e)}
+              value={comprehensiveCollision}
+            >
+              <option value="---">---</option>
+              <option value="None">None</option>
+              <option value="500">500</option>
+              <option value="1,000">1,000</option>
+              <option value="More">More</option>
             </select>
             <fieldset className="insurance-form__fieldset">
               <legend className="insurance-form__legend">Incidents</legend>
